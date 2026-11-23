@@ -84,7 +84,7 @@ const BASE_URL = "http://localhost:5000";
 // Task 10: get all books
 const getAllBooks = async () => {
     try {
-        const response = await axios.get(${BASE_URL}/);
+        const response = await axios.get(BASE_URL + "/");
         console.log(response.data);
         return response.data;
     } catch (error) {
@@ -95,7 +95,7 @@ const getAllBooks = async () => {
 // Task 11: get book details by ISBN
 const getBookByISBN = async (isbn) => {
     try {
-        const response = await axios.get(${BASE_URL}/isbn/${isbn});
+        const response = await axios.get(BASE_URL + "/isbn/" + isbn);
         console.log(response.data);
         return response.data;
     } catch (error) {
@@ -106,7 +106,7 @@ const getBookByISBN = async (isbn) => {
 // Task 12: get book details by author
 const getBooksByAuthor = async (author) => {
     try {
-        const response = await axios.get(${BASE_URL}/author/${encodeURIComponent(author)});
+        const response = await axios.get(BASE_URL + "/author/" + encodeURIComponent(author));
         console.log(response.data);
         return response.data;
     } catch (error) {
@@ -117,7 +117,7 @@ const getBooksByAuthor = async (author) => {
 // Task 13: get book details by title
 const getBooksByTitle = async (title) => {
     try {
-        const response = await axios.get(${BASE_URL}/title/${encodeURIComponent(title)});
+        const response = await axios.get(BASE_URL + "/title/" + encodeURIComponent(title));
         console.log(response.data);
         return response.data;
     } catch (error) {
@@ -130,10 +130,3 @@ module.exports.getAllBooks = getAllBooks;
 module.exports.getBookByISBN = getBookByISBN;
 module.exports.getBooksByAuthor = getBooksByAuthor;
 module.exports.getBooksByTitle = getBooksByTitle;
-//  Get book review
-public_users.get('/review/:isbn',function (req, res) {
-  //Write your code here
-  return res.status(300).json({message: "Yet to be implemented"});
-});
-
-module.exports.general = public_users;
